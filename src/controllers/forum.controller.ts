@@ -7,7 +7,6 @@ const prisma = new PrismaClient();
 
 export const createForum = async (req: AuthRequest, res: Response) => {
   try {
-    console.log("req:", req)
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
@@ -33,6 +32,11 @@ export const createForum = async (req: AuthRequest, res: Response) => {
             name: true,
             email: true,
             avatar: true
+          }
+        },
+        _count: {
+          select: {
+            comments: true
           }
         }
       }
@@ -160,6 +164,11 @@ export const updateForum = async (req: AuthRequest, res: Response) => {
             name: true,
             email: true,
             avatar: true
+          }
+        },
+        _count: {
+          select: {
+            comments: true
           }
         }
       }
