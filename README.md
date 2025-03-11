@@ -7,4 +7,11 @@ A forum application with React frontend and Node.js backend.
 - Node.js (v18.x or higher)
 - npm (v9.x or higher)
 
-// Updating in a while
+
+## Features
+
+### Implemented:
+- ✅ Register/Login
+- ✅ Create forum with tags
+- ✅ Update and delete forum as owner
+- ✅ Comment amd delete comment on forums as owner
